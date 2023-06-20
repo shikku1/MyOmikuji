@@ -1,21 +1,136 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>おみくじアプリ</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: rgb(190, 238, 240);
+      margin: 0;
+    }
+
+    main {
+      width: 240px;
+      margin: 0px auto;
+    }
+
+    section {
+      background-color: rgb(255, 251, 192);
+      margin: 35px auto 16px;
+      border: 3px double red;
+      padding: 0;
+      max-width: 230px;
+    }
+
+    h1 {
+      background-color: pink;
+      margin: 0 auto;
+      border-bottom: 2px solid red;
+      padding: 7px;
+
+      color: red;
+      font-weight: normal;
+      /* max-width: 200px; */
+      text-align: center;
+      font-size: 24px;
+      /* width: calc(100% - 16px - 16px); */
+    }
+
+    p {
+      background-color: rgb(192, 255, 220);
+      margin: 0;
+      border: none;
+      padding: 27px;
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      font-size: 32px;
+    }
+
+    button {
+      all: unset;
+      background-color: red;
+      width: 240px;
+      height: 38px;
+      border: none;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px #000000;
+      letter-spacing: 3px;
+      padding: 2px 0;
+
+      /* margin: 0px auto; */
+      /* height: 300px; */
+      /* border: 1px solid black; */
+      /* line-height: 20px; */
+      /* display:inline-block; ⇒　ユーザー　エージェント　スタイルシートに記載してる。 */
+      /* margin: 0px auto; */
+    }
+
+/*
+    button {
+      all: unset;
+      width: 100%;
+      background: red;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+      padding: 8px 0;
+      margin-top: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px #7a0000;
+    }
+*/
+
+    button:hover {
+      opacity: 0.7;
+    }
+
+    button:active {
+      position: relative;
+      top: 3px;
+      box-shadow: 0 1px #000000;
+    }
+
+  </style>
 </head>
+
 <body>
   <main>
     <section>
       <h1>今日の運勢</h1>
       <p id="result">?</p>
     </section>
-
     <button id="btn">おみくじを引く</button>
   </main>
 
-  <script src="main.js"></script>
+  <script>
+    document.getElementById('btn').addEventListener('click', () => {
+      const results = ['大吉', '中吉', '小吉'];
+      const n = Math.floor(Math.random() * results.length);
+      document.getElementById('result').textContent = results[n];
+
+      // const n = Math.floor(Math.random() * 3);
+      // switch (n) {
+      //   case 0:
+      //     document.getElementById('result').textContent = '大吉';
+      //     break;
+      //   case 1:
+      //     document.getElementById('result').textContent = '中吉';
+      //     break;
+      //   case 2:
+      //     document.getElementById('result').textContent = '小吉';
+      //     break;
+      // }
+
+    });
+  </script>
+
 </body>
+
 </html>
