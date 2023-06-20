@@ -110,23 +110,31 @@
   </main>
 
   <script>
-    document.getElementById('btn').addEventListener('click', () => {
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+    btn.addEventListener('click', () => {
       const results = ['大吉', '中吉', '小吉'];
       const n = Math.floor(Math.random() * results.length);
-      document.getElementById('result').textContent = results[n];
+      result.textContent = results[n];
 
-      // const n = Math.floor(Math.random() * 3);
-      // switch (n) {
-      //   case 0:
-      //     document.getElementById('result').textContent = '大吉';
-      //     break;
-      //   case 1:
-      //     document.getElementById('result').textContent = '中吉';
-      //     break;
-      //   case 2:
-      //     document.getElementById('result').textContent = '小吉';
-      //     break;
-      // }
+
+    // document.getElementById('btn').addEventListener('click', () => {
+    //   const results = ['大吉', '中吉', '小吉'];
+    //   const n = Math.floor(Math.random() * results.length);
+    //   document.getElementById('result').textContent = results[n];
+
+    // const n = Math.floor(Math.random() * 3);
+    // switch (n) {
+    //   case 0:
+    //     document.getElementById('result').textContent = '大吉';
+    //     break;
+    //   case 1:
+    //     document.getElementById('result').textContent = '中吉';
+    //     break;
+    //   case 2:
+    //     document.getElementById('result').textContent = '小吉';
+    //     break;
+    // }
 
     });
   </script>
